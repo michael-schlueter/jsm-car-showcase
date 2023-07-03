@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import CustomButton from "./CustomButton";
 import { CarProps } from "@/types";
+import { calculateCarRent } from "@/utils";
 
 interface CarCardProps {
   car: CarProps;
