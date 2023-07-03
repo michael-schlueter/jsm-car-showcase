@@ -13,6 +13,7 @@ const SearchBar = () => {
       <div className="searchbar__item">
         <SearchManufacturer
           manufacturer={manufacturer}
+          /* @ts-ignore */
           setManufacturer={setManufacturer}
         />
       </div>
