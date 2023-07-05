@@ -33,3 +33,15 @@ export interface CarProps {
   transmission: string;
   year: number;
 }
+
+export interface FilterProps {
+  manufacturer: string;
+  model: string;
+  fuel: string;
+  year: number;
+  limit: number;
+}
+
+export interface HomeProps {
+  searchParams: FilterProps;
+}
