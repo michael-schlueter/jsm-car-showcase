@@ -34,6 +34,8 @@ export interface CarProps {
   year: number;
 }
 
+export type CarState = CarProps[] & { message?: string };
+
 export interface FilterProps {
   manufacturer: string;
   model: string;
