@@ -40,7 +40,6 @@ const SearchBar = ({ setManufacturer, setModel }: SearchBarProps) => {
       <div className="searchbar__item">
         <SearchManufacturer
           selected={searchManufacturer}
-          /* @ts-ignore */
           setSelected={setSearchManufacturer}
         />
         <SearchButton otherClasses="sm:hidden" />
