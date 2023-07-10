@@ -59,7 +59,7 @@ export const updateSearchParams = (type: string, value: string) => {
   searchParams.set(type, value);
 
   // Set the specified search parameter to the given value
-  const newPathname = `${window.location.pathname}?${searchParams.toString()}`
+  const newPathname = `${window.location.pathname}?${searchParams.toString()}`;
 
   return newPathname;
-}
+};
