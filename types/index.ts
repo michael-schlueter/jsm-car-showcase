@@ -1,4 +1,4 @@
-import { Dispatch, MouseEventHandler, SetStateAction } from "react";
+import { MouseEventHandler } from "react";
 
 export interface CustomButtonProps {
   title: string;
@@ -9,11 +9,6 @@ export interface CustomButtonProps {
   rightIcon?: string;
   isDisabled?: boolean;
 }
-
-export interface CustomFilterProps {
-  title: string;
-}
-
 export interface SearchManufacturerProps {
   selected: string;
   setSelected: (selected: string) => void;
