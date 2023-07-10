@@ -15,8 +15,8 @@ export interface CustomFilterProps {
 }
 
 export interface SearchManufacturerProps {
-  manufacturer: string;
-  setManufacturer: (manufacturer: string) => string;
+  selected: string;
+  setSelected: (selected: string) => void;
 }
 
 export interface CarProps {

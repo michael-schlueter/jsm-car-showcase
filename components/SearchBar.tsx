@@ -23,7 +23,6 @@ const SearchButton = ({ otherClasses }: { otherClasses: string }) => {
 const SearchBar = ({ setManufacturer, setModel }: SearchBarProps) => {
   const [searchManufacturer, setSearchManufacturer] = useState("");
   const [searchModel, setSearchModel] = useState("");
-  const router = useRouter();
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -40,9 +39,9 @@ const SearchBar = ({ setManufacturer, setModel }: SearchBarProps) => {
     <form className="searchbar" onSubmit={handleSearch}>
       <div className="searchbar__item">
         <SearchManufacturer
-          manufacturer={searchManufacturer}
+          selected={searchManufacturer}
           /* @ts-ignore */
-          setManufacturer={setSearchManufacturer}
+          setSelected={setSearchManufacturer}
         />
         <SearchButton otherClasses="sm:hidden" />
       </div>
