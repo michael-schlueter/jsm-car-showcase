@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { SearchManufacturer } from ".";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import { SearchBarProps } from "@/types";
 
 const SearchButton = ({ otherClasses }: { otherClasses: string }) => {
