@@ -62,3 +62,8 @@ export interface ShowMoreProps {
   pageNumber: number;
   isNext: boolean;
 }
+
+export interface SearchBarProps {
+  setManufacturer: (manufacturer: string) => void;
+  setModel: (model: string) => void;
+}
