@@ -41,7 +41,6 @@ The dependencies which are necessary to run this app can be found in the package
 npm install
 ```
 3. In .env.local assign an API key (provided by [Cars by API-Ninjas](https://api-ninjas.com/api/cars) to the NEXT_PUBLIC_RAPID_API_KEY environment variable.
- ```
 4. Run the app typing
 ```
 npm run dev
