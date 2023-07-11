@@ -1,34 +1,75 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Car Showcase
+> This page lets you browse a car catalogue provided by the "Cars by API-Ninjas" API from RapidAPI. You can filter the cars based on several criterias such as manufacturer, model, fuel and more.
 
-## Getting Started
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+## General Information
+- This project is based on a tutorial from [Javascript Mastery](https://www.youtube.com/@javascriptmastery) 
+- I undertook this project to get familiar with working in a NextJS application to experiment with the new app router and server-side rendering
+- I also wanted to try out the HeadlessUI component library by integrating components such as Dialog, Transition and ComboBox
+- This project also gave me the chance to solidify my knowledge in applying TailwindCS for styling and TypeScript for typing.
+
+
+
+## Technologies Used
+- React 18.2.0
+- Typescript 5.1.3
+- NextJS 13.4.7
+- HeadlessUI 1.7.15
+- TailwindCSS 3.3.2
+
+
+## Features
+- Browser through a catalogue of cars
+- Search for specific cars
+- Filter the results by several criteria
+- Read more information about specific cars in modals
+
+
+
+## Screenshots
+![Example screenshot](https://i.ibb.co/w01Tx1t/carshowcase.jpg)
+
+
+
+## Setup
+The dependencies which are necessary to run this app can be found in the package.json file.
+
+1. Clone the repo
+2. Navigate to the project folder in the terminal and install the necessary NPM dependencies
 ```
+npm install
+```
+3. In .env.local assign an API key (provided by [Cars by API-Ninjas](https://api-ninjas.com/api/cars) to the NEXT_PUBLIC_RAPID_API_KEY environment variable.
+ ```
+4. Run the app typing
+```
+npm run dev
+```
+in your terminal and visit localhost:3000 in your browser.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Learnings
+- Setting up an app using NextJS, Typescript and TailwindCSS
+- Using Next.js Image components
+- Differentiating between server and client components ("use client"). Using "asynchronous" components
+- Adjusting metadata in Layout.tsx
+- Integrating aand styling Headless UI components such as Transition, Combobox and Modal
+- Manipulation of URL parameters to benefit from Server-Side Rendering
+- Implementing Pagination
+- Handling environment variables in NextJS applications
+- Transforming the app to pure client-side rendering because of little bugs with regards to scrolling using server components. It helped in understanding the specific differences and the trade-offs between Server-side and Client-side rendering.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Status
+The project is basically finished. I may revisit it in the future to implement a process of leasing cars including the handling of authentication and payments in a NextJS application. I may also add the ability to add cars to the catalogue.  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Acknowledgements
+- This project is based on a [tutorial](https://www.youtube.com/watch?v=pUNSHPyVryU) from [Javascript Mastery](https://www.youtube.com/@javascriptmastery).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
