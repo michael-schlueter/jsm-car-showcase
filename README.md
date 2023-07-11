@@ -19,6 +19,7 @@
 - TailwindCSS 3.3.2
 
 
+
 ## Features
 - Browser through a catalogue of cars
 - Search for specific cars
@@ -29,6 +30,11 @@
 
 ## Screenshots
 ![Example screenshot](https://i.ibb.co/w01Tx1t/carshowcase.jpg)
+
+
+
+## Demo
+Live demo [_here_](https://jsm-car-showcase-chi.vercel.app/).
 
 
 
