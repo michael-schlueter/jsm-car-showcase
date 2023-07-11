@@ -2,10 +2,12 @@ import { CarProps, FilterProps } from "@/types";
 
 export async function fetchCars(filters: FilterProps) {
   const { manufacturer, model, year, limit, fuel } = filters;
-  const headers = {
-    "X-RapidAPI-Key": process.env.XRAPID_APIKEY || "",
+  const headers: HeadersInit = {
+    "X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPID_API_KEY || "",
     "X-RapidAPI-Host": "cars-by-api-ninjas.p.rapidapi.com",
   };
+
+  console.log(process.env.XRAPID_APIKEY);
 
   //   Set the required headers for the API request
   const response = await fetch(
@@ -59,7 +61,7 @@ export const updateSearchParams = (type: string, value: string) => {
   searchParams.set(type, value);
 
   // Set the specified search parameter to the given value
-  const newPathname = `${window.location.pathname}?${searchParams.toString()}`
+  const newPathname = `${window.location.pathname}?${searchParams.toString()}`;
 
   return newPathname;
-}
+};

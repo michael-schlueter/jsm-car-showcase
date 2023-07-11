@@ -1,4 +1,4 @@
-import { Dispatch, MouseEventHandler, SetStateAction } from "react";
+import { MouseEventHandler } from "react";
 
 export interface CustomButtonProps {
   title: string;
@@ -9,14 +9,9 @@ export interface CustomButtonProps {
   rightIcon?: string;
   isDisabled?: boolean;
 }
-
-export interface CustomFilterProps {
-  title: string;
-}
-
 export interface SearchManufacturerProps {
-  manufacturer: string;
-  setManufacturer: (manufacturer: string) => string;
+  selected: string;
+  setSelected: (selected: string) => void;
 }
 
 export interface CarProps {
@@ -34,12 +29,14 @@ export interface CarProps {
   year: number;
 }
 
+export type CarState = CarProps[] & { message?: string };
+
 export interface FilterProps {
-  manufacturer: string;
-  model: string;
-  fuel: string;
-  year: number;
-  limit: number;
+  manufacturer?: string;
+  model?: string;
+  fuel?: string;
+  year?: number;
+  limit?: number;
 }
 
 export interface HomeProps {
@@ -51,12 +48,18 @@ export interface OptionsProps {
   value: string;
 }
 
-export interface CustomFilterProps {
-  title: string;
+export interface CustomFilterProps<T> {
   options: OptionsProps[];
+  setFilter: (selected: T) => void;
 }
 
 export interface ShowMoreProps {
   pageNumber: number;
   isNext: boolean;
+  setLimit: (limit: number) => void;
+}
+
+export interface SearchBarProps {
+  setManufacturer: (manufacturer: string) => void;
+  setModel: (model: string) => void;
 }

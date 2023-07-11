@@ -14,8 +14,17 @@ interface CarCardProps {
 
 const CarCard = ({ car }: CarCardProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLiked, setIsLiked] = useState(false);
   const { city_mpg, year, make, model, transmission, drive } = car;
   const carRent = calculateCarRent(city_mpg, year);
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function openModal() {
+    setIsOpen(true);
+  }
 
   return (
     <div className="car-card group">
@@ -23,17 +32,24 @@ const CarCard = ({ car }: CarCardProps) => {
         <h2 className="car-card__content-title">
           {make} {model}
         </h2>
+
+        <Image
+          src={!isLiked ? "/heart-outline.svg" : "/heart-filled.svg"}
+          width={24}
+          height={24}
+          alt="heart"
+          className="object-contain cursor-pointer mt-0.5"
+          onClick={() => setIsLiked(!isLiked)}
+        />
       </div>
-      <p className="flex mt-6 text-[32px] leading-[38px] font-extrabold">
-        <span className="self-start text-[14px] leading-[17px] font-semibold">
-          $
-        </span>
+
+      <p className="car-card__price">
+        <span className="car-card__price-dollar">$</span>
         {carRent}
-        <span className="self-end text-[14px] leading-[17px] font-medium">
-          /day
-        </span>
+        <span className="car-card__price-day">/day</span>
       </p>
-      <div className="relative w-full h-40 my-3 object-contain">
+
+      <div className="car-card__image">
         <Image
           src={generateCarImageUrl(car)}
           alt="car model"
@@ -42,8 +58,9 @@ const CarCard = ({ car }: CarCardProps) => {
           className="object-contain"
         />
       </div>
+
       <div className="relative flex w-full mt-2">
-        <div className="flex group-hover:invisible w-full justify-between text-grey">
+        <div className="car-card__icon-container">
           <div className="car-card__icon">
             <Image
               src="/steering-wheel.svg"
@@ -51,7 +68,7 @@ const CarCard = ({ car }: CarCardProps) => {
               height={20}
               alt="steering wheel"
             />
-            <p className="text-[14px] leading-[17px]">
+            <p className="car-card__icon-text">
               {transmission === "a" ? "Automatic" : "Manual"}
             </p>
           </div>
@@ -64,21 +81,19 @@ const CarCard = ({ car }: CarCardProps) => {
             <p className="car-card__icon-text">{city_mpg} MPG</p>
           </div>
         </div>
+
         <div className="car-card__btn-container">
           <CustomButton
             title="View More"
             containerStyles="w-full py-[16px] rounded-full bg-primary-blue"
             textStyles="text-white text-[14px] leading-[17px] font-bold"
             rightIcon="/right-arrow.svg"
-            handleClick={() => setIsOpen(true)}
+            handleClick={openModal}
           />
         </div>
       </div>
-      <CarDetails
-      isOpen={isOpen}
-      closeModal={() => setIsOpen(false)}
-      car={car}
-      />
+
+      <CarDetails isOpen={isOpen} closeModal={closeModal} car={car} />
     </div>
   );
 };
